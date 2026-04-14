@@ -4,41 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brief Tecnico Piattaforma — Test Maggio 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
     --orange: #fc4c02;
     --orange-light: #fd7d40;
     --orange-glow: rgba(252, 76, 2, 0.08);
-    --orange-glow-strong: rgba(252, 76, 2, 0.14);
+    --orange-glow-strong: rgba(252, 76, 2, 0.15);
     --lavender: #ae7eca;
     --lavender-soft: rgba(174, 126, 202, 0.10);
     --navy: #002d72;
-    --navy-mid: #003d8f;
+    --navy-deep: #001a45;
     --cream: #F7F3EE;
     --cream-deep: #EDE6DC;
-    --sand: #D4C5B0;
     --tan: #ca916c;
     --tan-glow: rgba(202, 145, 108, 0.12);
     --text: #1a1e2e;
     --text-soft: #5a6070;
     --text-muted: #8a8e9e;
-    --green: #3a8f6a;
-    --green-glow: rgba(58, 143, 106, 0.10);
-    --blue-soft: #4a7fb5;
-    --blue-glow: rgba(74, 127, 181, 0.10);
-    --red-soft: #c45a4a;
-    --red-glow: rgba(196, 90, 74, 0.08);
-    --white-05: rgba(255,255,255,0.05);
-    --white-08: rgba(255,255,255,0.08);
-    --white-12: rgba(255,255,255,0.12);
-    --white-20: rgba(255,255,255,0.20);
-    --white-50: rgba(255,255,255,0.50);
-    --white-70: rgba(255,255,255,0.70);
-    --white-85: rgba(255,255,255,0.85);
+    --green: #2d8a5e;
+    --green-glow: rgba(45, 138, 94, 0.10);
+    --green-soft: rgba(45, 138, 94, 0.06);
+    --red: #c0392b;
+    --red-glow: rgba(192, 57, 43, 0.08);
 
-    --font-display: 'Nexa', 'Outfit', sans-serif;
-    --font-body: 'Nexa', 'Outfit', sans-serif;
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'Outfit', sans-serif;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,640 +40,278 @@
     background: var(--cream);
     color: var(--text);
     line-height: 1.65;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
 
   .progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0%;
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
     background: linear-gradient(90deg, var(--orange), var(--tan));
-    z-index: 1000;
-    transition: width 0.1s linear;
+    z-index: 1000; transition: width 0.1s linear;
   }
 
   .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.65s cubic-bezier(0.23,1,0.32,1), transform 0.65s cubic-bezier(0.23,1,0.32,1);
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-d1 { transition-delay: 0.08s; }
+  .reveal-d2 { transition-delay: 0.16s; }
+  .reveal-d3 { transition-delay: 0.24s; }
 
   /* ── HERO ── */
   .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 72px;
-    position: relative;
-    background: var(--cream);
-    overflow: hidden;
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 72px; position: relative; overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -30%;
-    right: -15%;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, var(--orange-glow) 0%, transparent 70%);
-    pointer-events: none;
+  .hero::after {
+    content: ''; position: absolute; top: 10%; right: -5%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, var(--orange-glow-strong) 0%, transparent 65%);
+    pointer-events: none; filter: blur(40px);
   }
   .hero-eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--orange);
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--orange); font-weight: 600; margin-bottom: 24px;
   }
   .hero h1 {
-    font-family: var(--font-display);
-    font-size: 52px;
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--navy);
-    max-width: 750px;
-    margin-bottom: 20px;
+    font-family: var(--font-display); font-size: 56px; font-weight: 400;
+    line-height: 1.1; color: var(--navy); max-width: 700px; margin-bottom: 20px;
   }
-  .hero h1 span {
-    color: var(--orange);
-  }
+  .hero h1 em { font-style: italic; color: var(--orange); }
   .hero-sub {
-    font-size: 17px;
-    color: var(--text-soft);
-    max-width: 600px;
-    line-height: 1.7;
-    margin-bottom: 40px;
+    font-size: 16px; color: var(--text-soft); max-width: 560px;
+    line-height: 1.75; margin-bottom: 48px;
   }
   .hero-meta {
-    display: flex;
-    gap: 48px;
-    padding-top: 32px;
-    border-top: 1px solid rgba(0,0,0,0.06);
+    display: flex; gap: 48px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.06);
   }
   .hero-meta-item {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted);
   }
   .hero-meta-item span {
-    display: block;
-    font-size: 15px;
-    color: var(--text);
-    font-weight: 600;
-    margin-top: 4px;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-
-  /* ── NAV ── */
-  .nav-section {
-    padding: 0 72px 60px;
-    max-width: 1100px;
-  }
-  .nav-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-  .nav-card {
-    display: block;
-    text-decoration: none;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 12px;
-    padding: 20px;
-    transition: all 0.25s ease;
-    cursor: pointer;
-  }
-  .nav-card:hover {
-    border-color: var(--orange);
-    box-shadow: 0 4px 20px var(--orange-glow);
-    transform: translateY(-2px);
-  }
-  .nav-card-num {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--orange);
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-  .nav-card-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--navy);
-    line-height: 1.3;
+    display: block; font-size: 15px; color: var(--text); font-weight: 600;
+    margin-top: 5px; letter-spacing: 0; text-transform: none;
   }
 
   /* ── SECTIONS ── */
-  section {
-    padding: 80px 72px;
-    max-width: 1100px;
+  .sec { padding: 100px 72px; max-width: 1100px; margin: 0 auto; }
+  .sec.full { max-width: none; }
+  .sec-eyebrow {
+    font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--orange); font-weight: 600; margin-bottom: 14px;
   }
-  section.full-width {
-    max-width: none;
+  .sec-title {
+    font-family: var(--font-display); font-size: 40px; font-weight: 400;
+    color: var(--navy); line-height: 1.15; margin-bottom: 12px;
   }
-  .section-eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--orange);
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: var(--font-display);
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 12px;
-  }
-  .section-desc {
-    font-size: 15px;
-    color: var(--text-soft);
-    max-width: 600px;
-    margin-bottom: 48px;
-    line-height: 1.7;
+  .sec-desc {
+    font-size: 15px; color: var(--text-soft); max-width: 560px;
+    margin-bottom: 56px; line-height: 1.75;
   }
 
   /* ── FLOW ── */
-  .flow-section {
-    background: var(--navy);
-    padding: 80px 72px;
-    max-width: none;
-  }
-  .flow-section .section-eyebrow { color: var(--orange-light); }
-  .flow-section .section-title { color: #fff; }
-  .flow-section .section-desc { color: var(--white-50); }
+  .flow-wrap { background: var(--navy-deep); padding: 100px 72px; }
+  .flow-wrap .sec-eyebrow { color: var(--orange-light); }
+  .flow-wrap .sec-title { color: #fff; }
+  .flow-wrap .sec-desc { color: rgba(255,255,255,0.45); }
 
-  .flow-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .flow-step { display: flex; align-items: stretch; gap: 28px; }
+  .flow-rail { display: flex; flex-direction: column; align-items: center; width: 52px; flex-shrink: 0; }
+  .flow-num {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; font-weight: 700; color: #fff; flex-shrink: 0; z-index: 2;
   }
+  .flow-rail-line { flex: 1; width: 2px; background: rgba(255,255,255,0.08); }
 
-  .flow-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    position: relative;
+  .flow-card {
+    flex: 1; margin-bottom: 16px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px; padding: 32px;
   }
+  .flow-card .fc-where {
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--orange-light); font-weight: 600; margin-bottom: 10px;
+  }
+  .flow-card h3 { font-family: var(--font-display); font-size: 22px; color: #fff; margin-bottom: 8px; }
+  .flow-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.75; }
+  .flow-card p strong { color: rgba(255,255,255,0.9); font-weight: 600; }
 
-  .flow-line {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-    width: 48px;
-  }
-  .flow-dot {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 800;
-    color: #fff;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
-  }
-  .flow-connector {
-    width: 2px;
-    height: 40px;
-    background: var(--white-12);
-    flex-shrink: 0;
-  }
+  .flow-sub { padding-left: 80px; }
+  .flow-sub .flow-num { width: 36px; height: 36px; font-size: 12px; }
+  .flow-sub .flow-rail { width: 36px; }
+  .flow-sub .flow-card { background: rgba(255,255,255,0.025); border-color: rgba(255,255,255,0.04); padding: 24px 28px; }
+  .flow-sub .flow-card h3 { font-size: 18px; }
 
-  .flow-content {
-    background: var(--white-05);
-    border: 1px solid var(--white-08);
-    border-radius: 14px;
-    padding: 28px 32px;
-    flex: 1;
-    margin-bottom: 0;
+  /* ── PANELS (screenshots) ── */
+  .panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .panel {
+    background: #fff; border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 30px rgba(0,0,0,0.04);
   }
-  .flow-content h3 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 4px;
+  .panel-header {
+    padding: 14px 20px; display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
   }
-  .flow-content .flow-where {
-    font-size: 12px;
-    color: var(--orange-light);
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+  .panel-status { width: 8px; height: 8px; border-radius: 50%; }
+  .panel-status.remove { background: var(--red); }
+  .panel-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 4px;
   }
-  .flow-content p {
-    font-size: 14px;
-    color: var(--white-70);
-    line-height: 1.7;
-  }
+  .panel-tag.remove { background: var(--red-glow); color: var(--red); }
+  .panel-label { font-size: 12px; color: var(--text-soft); font-weight: 500; margin-left: auto; }
 
-  .flow-sub {
-    margin-left: 72px;
-    margin-top: 0;
+  .panel-img { position: relative; overflow: hidden; }
+  .panel-img img { width: 100%; display: block; }
+  .panel-img.dimmed img { opacity: 0.4; filter: grayscale(30%); }
+  .panel-img.dimmed::after {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(192,57,43,0.04) 10px, rgba(192,57,43,0.04) 20px);
   }
-  .flow-sub .flow-dot {
-    width: 32px;
-    height: 32px;
-    font-size: 13px;
+  .overlay-badge {
+    position: absolute; top: 16px; right: 16px;
+    padding: 6px 16px; border-radius: 6px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    background: rgba(192,57,43,0.9); color: #fff;
   }
-  .flow-sub .flow-line {
-    width: 32px;
-    padding-left: 0;
-  }
-  .flow-sub .flow-connector {
-    height: 24px;
-  }
-  .flow-sub .flow-content {
-    background: rgba(255,255,255,0.03);
-    border-color: var(--white-05);
-    padding: 20px 24px;
-  }
-  .flow-sub .flow-content h3 {
-    font-size: 16px;
-  }
+  .panel-body { padding: 20px 24px; }
+  .panel-body h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .panel-body p { font-size: 13px; color: var(--text-soft); line-height: 1.7; }
 
-  /* ── LANDING DETAIL ── */
-  .landing-blueprint {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.04);
+  /* ── WIREFRAMES ── */
+  .wireframe {
+    background: #fff; border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 16px; overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.04); margin-bottom: 48px;
   }
-  .blueprint-header {
-    background: var(--navy);
-    padding: 20px 28px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  .wf-browser {
+    background: var(--navy-deep); padding: 12px 20px;
+    display: flex; align-items: center; gap: 8px;
   }
-  .blueprint-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--white-20);
-  }
-  .blueprint-dot.active { background: var(--orange); }
-  .blueprint-url {
-    font-size: 12px;
-    color: var(--white-50);
-    margin-left: 8px;
-  }
-  .blueprint-body {
-    padding: 40px 36px;
-  }
-  .blueprint-block {
-    border: 2px dashed rgba(0,0,0,0.08);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 20px;
-    position: relative;
-  }
-  .blueprint-block.highlight {
-    border-color: var(--orange);
-    border-style: solid;
-    background: var(--orange-glow);
-  }
-  .blueprint-block.new {
-    border-color: var(--green);
-    border-style: solid;
-    background: var(--green-glow);
-  }
-  .blueprint-label {
-    position: absolute;
-    top: -10px;
-    left: 16px;
-    background: var(--cream);
-    padding: 0 8px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  .blueprint-block.highlight .blueprint-label { color: var(--orange); background: #fff; }
-  .blueprint-block.new .blueprint-label { color: var(--green); background: #fff; }
+  .wf-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+  .wf-dot:first-child { background: var(--orange); }
+  .wf-url { font-size: 11px; color: rgba(255,255,255,0.4); margin-left: 12px; }
+  .wf-body { padding: 40px; }
 
-  .blueprint-block h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 6px;
+  .wf-block {
+    border: 2px dashed rgba(0,0,0,0.1); border-radius: 12px;
+    padding: 24px; margin-bottom: 20px; position: relative;
   }
-  .blueprint-block p {
-    font-size: 13px;
-    color: var(--text-soft);
-    line-height: 1.6;
+  .wf-block.is-new { border-color: var(--green); border-style: solid; background: var(--green-soft); }
+  .wf-block.is-change { border-color: var(--orange); border-style: solid; background: var(--orange-glow); }
+  .wf-badge {
+    position: absolute; top: -11px; left: 16px;
+    background: #fff; padding: 2px 10px; font-size: 9px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; border-radius: 3px;
   }
+  .wf-block.is-new .wf-badge { color: var(--green); }
+  .wf-block.is-change .wf-badge { color: var(--orange); }
 
-  .blueprint-cards {
-    display: flex;
-    gap: 8px;
-    margin-top: 12px;
-  }
-  .blueprint-card-mini {
-    flex: 1;
-    height: 48px;
-    border-radius: 8px;
-    display: flex;
-    align-items: flex-end;
-    padding: 6px 8px;
-    font-size: 9px;
-    font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .card-warm { background: linear-gradient(135deg, #e8734a, #d4623a); }
-  .card-cool { background: linear-gradient(135deg, #4a7fb5, #2a5a8f); }
+  .wf-block h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .wf-block p { font-size: 12.5px; color: var(--text-soft); line-height: 1.65; }
+  .wf-block .wf-detail { font-size: 11px; color: var(--text-muted); font-style: italic; margin-top: 6px; }
 
-  .blueprint-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 12px;
+  .wf-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .wf-percorso { border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 20px; text-align: center; }
+  .wf-percorso h5 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .wf-percorso p { font-size: 11px; color: var(--text-muted); }
+  .wf-percorso.corpo { border-color: var(--orange); background: var(--orange-glow); }
+  .wf-percorso.viso { border-color: var(--lavender); background: var(--lavender-soft); }
+
+  .wf-cards { display: flex; gap: 6px; margin-top: 12px; }
+  .wf-card-mini {
+    flex: 1; height: 44px; border-radius: 8px;
+    display: flex; align-items: flex-end; padding: 5px 6px;
+    font-size: 8px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.3px;
   }
-  .blueprint-percorso {
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
+  .wf-card-mini.warm { background: linear-gradient(145deg, #e8734a, #d4623a); }
+  .wf-card-mini.cool { background: linear-gradient(145deg, #4a7fb5, #2a5a8f); }
+  .wf-card-mini.lav { background: linear-gradient(145deg, #ae7eca, #8a5eaa); }
+  .wf-card-mini.pause { background: linear-gradient(145deg, #bbb, #999); }
+
+  .wf-selector { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+  .wf-sel-title {
+    font-size: 12px; font-weight: 700; color: var(--navy); text-align: center;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;
   }
-  .blueprint-percorso h5 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-  .blueprint-percorso p {
-    font-size: 11px;
-    color: var(--text-muted);
-  }
-  .blueprint-percorso.corpo { border-color: var(--orange); background: var(--orange-glow); }
-  .blueprint-percorso.viso { border-color: var(--lavender); background: var(--lavender-soft); }
+  .wf-sel-btn { padding: 10px; border-radius: 8px; text-align: center; font-size: 12px; font-weight: 600; color: #fff; }
+  .wf-sel-btn.orange { background: var(--orange); }
+  .wf-sel-btn.navy { background: var(--navy); }
+  .wf-arrow { text-align: center; padding: 16px 0; font-size: 24px; color: var(--text-muted); }
 
   /* ── TASKS ── */
-  .tasks-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  .tasks-section { background: var(--cream-deep); padding: 100px 72px; }
+  .tasks-group-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 20px; margin-top: 40px; padding-bottom: 10px; border-bottom: 2px solid;
   }
+  .tasks-group-title.webhero { color: var(--orange); border-color: var(--orange); }
+  .tasks-group-title.internal { color: var(--navy); border-color: var(--navy); }
 
-  .task-card {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 14px;
-    padding: 28px 32px;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.03);
-    transition: all 0.25s ease;
+  .task-list { display: flex; flex-direction: column; gap: 12px; }
+  .task-item {
+    background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 14px;
+    padding: 24px 28px; display: flex; gap: 18px; align-items: flex-start;
+    transition: box-shadow 0.25s ease;
   }
-  .task-card:hover {
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  .task-item:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
+  .task-n {
+    width: 34px; height: 34px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; flex-shrink: 0;
   }
+  .task-n.wh { background: var(--orange-glow-strong); color: var(--orange); }
+  .task-n.int { background: rgba(0,45,114,0.08); color: var(--navy); }
+  .task-info { flex: 1; }
+  .task-info h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; line-height: 1.35; }
+  .task-info p { font-size: 13px; color: var(--text-soft); line-height: 1.7; }
 
-  .task-num {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 800;
-    flex-shrink: 0;
+  /* ── WORKS ── */
+  .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .works-item {
+    background: #fff; border-radius: 12px; padding: 22px;
+    border: 1px solid rgba(0,0,0,0.04); border-left: 3px solid var(--green);
   }
-  .task-num.webhero { background: var(--orange-glow-strong); color: var(--orange); }
-  .task-num.internal { background: var(--blue-glow); color: var(--blue-soft); }
+  .works-item h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .works-item p { font-size: 12px; color: var(--text-soft); line-height: 1.6; }
 
-  .task-body { flex: 1; }
-  .task-body h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 4px;
-    line-height: 1.3;
-  }
-  .task-body p {
-    font-size: 13.5px;
-    color: var(--text-soft);
-    line-height: 1.65;
-  }
-  .task-owner {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 100px;
-    margin-top: 10px;
-  }
-  .task-owner.webhero { background: var(--orange-glow); color: var(--orange); }
-  .task-owner.internal { background: var(--blue-glow); color: var(--blue-soft); }
-
-  /* ── DETAIL BOXES ── */
-  .detail-section {
-    background: var(--cream-deep);
-    padding: 80px 72px;
-    max-width: none;
-  }
-
-  .detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .detail-card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 32px 28px;
-    border: 1px solid rgba(0,0,0,0.04);
-  }
-  .detail-card h4 {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-  .detail-card .detail-where {
-    font-size: 11px;
-    color: var(--text-muted);
-    font-weight: 500;
-    margin-bottom: 14px;
-    font-style: italic;
-  }
-  .detail-card p, .detail-card ul {
-    font-size: 13.5px;
-    color: var(--text-soft);
-    line-height: 1.7;
-  }
-  .detail-card ul {
-    list-style: none;
-    padding: 0;
-  }
-  .detail-card ul li {
-    padding-left: 16px;
-    position: relative;
-    margin-bottom: 4px;
-  }
-  .detail-card ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--orange);
-    opacity: 0.4;
-  }
-
-  /* ── ALREADY WORKS ── */
-  .works-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .works-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 24px;
-    border: 1px solid rgba(0,0,0,0.04);
-    border-left: 3px solid var(--green);
-  }
-  .works-card h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-  .works-card p {
-    font-size: 12.5px;
-    color: var(--text-soft);
-    line-height: 1.6;
-  }
-  .works-icon {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  /* ── CALL AGENDA ── */
-  .agenda-section {
-    background: var(--navy);
-    padding: 80px 72px;
-    max-width: none;
-  }
-  .agenda-section .section-eyebrow { color: var(--orange-light); }
-  .agenda-section .section-title { color: #fff; }
-  .agenda-section .section-desc { color: var(--white-50); }
-
-  .agenda-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 800px;
-  }
+  /* ── AGENDA ── */
+  .agenda-wrap { background: var(--navy-deep); padding: 100px 72px; }
+  .agenda-wrap .sec-eyebrow { color: var(--orange-light); }
+  .agenda-wrap .sec-title { color: #fff; }
+  .agenda-wrap .sec-desc { color: rgba(255,255,255,0.45); }
+  .agenda-list { display: flex; flex-direction: column; gap: 14px; max-width: 800px; }
   .agenda-item {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    background: var(--white-05);
-    border: 1px solid var(--white-08);
-    border-radius: 14px;
-    padding: 24px 28px;
+    display: flex; gap: 18px; align-items: flex-start;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 24px 28px;
   }
-  .agenda-num {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: var(--orange);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 14px;
-    flex-shrink: 0;
+  .agenda-n {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--orange); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px; flex-shrink: 0;
   }
-  .agenda-body h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 4px;
-  }
-  .agenda-body p {
-    font-size: 13.5px;
-    color: var(--white-70);
-    line-height: 1.65;
-  }
+  .agenda-info h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .agenda-info p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
 
-  /* ── NOTE BOX ── */
-  .note-box {
-    background: var(--orange-glow);
-    border-left: 3px solid var(--orange);
-    border-radius: 0 12px 12px 0;
-    padding: 24px 28px;
-    margin-top: 40px;
-    max-width: 800px;
-  }
-  .note-box h4 {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 6px;
-  }
-  .note-box p {
-    font-size: 14px;
-    color: var(--text-soft);
-    line-height: 1.7;
-  }
-
-  /* ── FOOTER ── */
   .footer {
-    padding: 40px 72px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--text-muted);
+    padding: 40px 72px; text-align: center;
+    font-size: 11px; color: var(--text-muted);
     border-top: 1px solid rgba(0,0,0,0.05);
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .hero { padding: 60px 28px; }
-    .hero h1 { font-size: 32px; }
-    section, .flow-section, .detail-section, .agenda-section { padding: 60px 28px; }
-    .nav-grid { grid-template-columns: 1fr 1fr; }
-    .detail-grid { grid-template-columns: 1fr; }
+    .hero, .sec, .flow-wrap, .tasks-section, .agenda-wrap { padding-left: 24px; padding-right: 24px; }
+    .hero h1 { font-size: 34px; }
+    .sec-title { font-size: 28px; }
+    .hero-meta { flex-direction: column; gap: 16px; }
+    .panel-grid { grid-template-columns: 1fr; }
     .works-grid { grid-template-columns: 1fr; }
-    .hero-meta { flex-direction: column; gap: 20px; }
-    .flow-sub { margin-left: 36px; }
-    .blueprint-two-col { grid-template-columns: 1fr; }
-    .blueprint-cards { flex-wrap: wrap; }
-    .blueprint-card-mini { min-width: 60px; }
+    .wf-two-col { grid-template-columns: 1fr; }
+    .wf-cards { flex-wrap: wrap; }
+    .flow-sub { padding-left: 40px; }
   }
 </style>
 </head>
@@ -690,415 +319,287 @@
 
 <div class="progress-bar"></div>
 
-<!-- ═══════════════ HERO ═══════════════ -->
+<!-- ═══ HERO ═══ -->
 <div class="hero">
   <div class="hero-eyebrow reveal">Brief Tecnico Piattaforma</div>
-  <h1 class="reveal reveal-delay-1">Cosa serve su <span>martinabindi.com</span> per il test</h1>
-  <p class="hero-sub reveal reveal-delay-2">Tutte le modifiche tecniche sulla piattaforma per accogliere le tester di maggio. Documento operativo per la call con Webhero.</p>
-  <div class="hero-meta reveal reveal-delay-3">
+  <h1 class="reveal reveal-d1">Cosa serve su <em>martinabindi.com</em> per il test</h1>
+  <p class="hero-sub reveal reveal-d2">Le modifiche tecniche sulla piattaforma per accogliere le tester di maggio. Documento operativo per la call con Webhero.</p>
+  <div class="hero-meta reveal reveal-d3">
     <div class="hero-meta-item">Piattaforma<span>martinabindi.com</span></div>
     <div class="hero-meta-item">Test<span>Maggio 2026 &mdash; &euro;97</span></div>
     <div class="hero-meta-item">Tester attese<span>~100+</span></div>
-    <div class="hero-meta-item">Acquisto su<span>bSoul (non su martinabindi.com)</span></div>
+    <div class="hero-meta-item">Acquisto<span>Su bSoul, non su martinabindi.com</span></div>
   </div>
 </div>
 
-<!-- ═══════════════ NAV ═══════════════ -->
-<div class="nav-section reveal">
-  <div class="nav-grid">
-    <a href="#flusso" class="nav-card">
-      <div class="nav-card-num">01</div>
-      <div class="nav-card-title">Flusso utente completo</div>
-    </a>
-    <a href="#landing" class="nav-card">
-      <div class="nav-card-num">02</div>
-      <div class="nav-card-title">Landing post-login</div>
-    </a>
-    <a href="#modifiche" class="nav-card">
-      <div class="nav-card-num">03</div>
-      <div class="nav-card-title">Modifiche richieste</div>
-    </a>
-    <a href="#agenda" class="nav-card">
-      <div class="nav-card-num">04</div>
-      <div class="nav-card-title">Agenda call Webhero</div>
-    </a>
+<!-- ═══ FLUSSO ═══ -->
+<div class="flow-wrap" id="flusso">
+  <div class="sec-eyebrow reveal">01 &mdash; Flusso utente</div>
+  <h2 class="sec-title reveal">Da bSoul al primo video</h2>
+  <p class="sec-desc reveal">Il percorso completo della tester, dall&rsquo;acquisto alla fruizione dei contenuti.</p>
+
+  <div class="flow-step reveal">
+    <div class="flow-rail"><div class="flow-num" style="background:var(--orange)">1</div><div class="flow-rail-line"></div></div>
+    <div class="flow-card">
+      <div class="fc-where">Su bSoul</div>
+      <h3>Acquisto</h3>
+      <p>La cliente (acquirente Pass Primavera Premium) riceve l&rsquo;email di invito con il <strong>Video 1 pre-acquisto</strong> di Martina. Compra &euro;97 su bSoul.</p>
+    </div>
+  </div>
+
+  <div class="flow-step reveal">
+    <div class="flow-rail"><div class="flow-num" style="background:var(--tan)">2</div><div class="flow-rail-line"></div></div>
+    <div class="flow-card">
+      <div class="fc-where">Email</div>
+      <h3>Ponte verso martinabindi.com</h3>
+      <p>Dopo l&rsquo;acquisto, riceve un&rsquo;email con istruzioni per accedere a martinabindi.com. <strong>Meccanismo di accesso controllato da definire con Webhero</strong> (opzione consigliata: whitelist email o codice individuale).</p>
+    </div>
+  </div>
+
+  <div class="flow-step reveal">
+    <div class="flow-rail"><div class="flow-num" style="background:var(--lavender)">3</div><div class="flow-rail-line"></div></div>
+    <div class="flow-card">
+      <div class="fc-where">martinabindi.com</div>
+      <h3>Login &rarr; Landing contenuti (diretta)</h3>
+      <p>Fa login e atterra <strong>direttamente sulla pagina contenuti</strong> (modificata). Niente dashboard intermedia. Prima cosa che vede: introduzione + Video 2 di Martina + i due percorsi.</p>
+    </div>
+  </div>
+
+  <div class="flow-step reveal">
+    <div class="flow-rail"><div class="flow-num" style="background:var(--orange)">4</div><div class="flow-rail-line"></div></div>
+    <div class="flow-card">
+      <div class="fc-where">Percorso Corpo</div>
+      <h3>7 card giornaliere &rarr; pagina del giorno</h3>
+      <p>Clicca su Percorso Corpo &rarr; vede le <strong>7 card</strong> (Luned&igrave; &rarr; Domenica). Clicca sul giorno.</p>
+    </div>
+  </div>
+
+  <div class="flow-step flow-sub reveal">
+    <div class="flow-rail"><div class="flow-num" style="background:rgba(255,255,255,0.12);color:var(--orange-light)">4a</div><div class="flow-rail-line"></div></div>
+    <div class="flow-card">
+      <h3>Pagina del giorno + selettore livello</h3>
+      <p>Atterra sulla pagina del giorno. Vede: descrizione routine, durata, accessori, barra progresso. Nella sezione &ldquo;Programma Corso&rdquo; trova il <strong>selettore livello al posto degli accordion</strong>: Sedia / Base / Avanzato + Pillole + Focus.</p>
+    </div>
+  </div>
+
+  <div class="flow-step flow-sub reveal">
+    <div class="flow-rail"><div class="flow-num" style="background:rgba(255,255,255,0.12);color:var(--orange-light)">4b</div></div>
+    <div class="flow-card">
+      <h3>Video player</h3>
+      <p>Sceglie il livello &rarr; atterra sul video. Domenica = popup pausa (&ldquo;Un giorno di pausa e relax tutto per te!&rdquo;).</p>
+    </div>
+  </div>
+
+  <div class="flow-step reveal" style="margin-top:16px">
+    <div class="flow-rail"><div class="flow-num" style="background:var(--lavender)">5</div></div>
+    <div class="flow-card">
+      <div class="fc-where">Percorso Viso</div>
+      <h3>Stessa struttura del Corpo</h3>
+      <p><strong>7 card giornaliere</strong> (Giorno 1 &rarr; 7). Click &rarr; pagina del giorno (Drenaggio / Ossigenazione / Tonificazione) &rarr; video + focus opzionale. Giorno 4 = popup pausa. Oggi &egrave; una lista piatta di accordion &mdash; deve diventare card come il Corpo.</p>
+    </div>
   </div>
 </div>
 
-<!-- ═══════════════ FLUSSO UTENTE ═══════════════ -->
-<section class="flow-section full-width" id="flusso">
-  <div class="section-eyebrow reveal">01 &mdash; Flusso utente</div>
-  <h2 class="section-title reveal">Da bSoul al primo video</h2>
-  <p class="section-desc reveal">Il percorso completo della tester, dall&rsquo;acquisto alla fruizione dei contenuti.</p>
+<!-- ═══ PAGINE DA RIMUOVERE ═══ -->
+<div class="sec">
+  <div class="sec-eyebrow reveal">02 &mdash; Cosa va rimosso</div>
+  <h2 class="sec-title reveal">Pagine da bypassare o nascondere</h2>
+  <p class="sec-desc reveal">Queste schermate esistono oggi ma non devono essere visibili alle tester. Screenshot reali della piattaforma attuale.</p>
 
-  <div class="flow-container">
-
-    <!-- Step 1 -->
-    <div class="flow-step reveal">
-      <div class="flow-line">
-        <div class="flow-dot" style="background: var(--orange);">1</div>
-        <div class="flow-connector"></div>
+  <div class="panel-grid reveal">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-status remove"></div>
+        <div class="panel-tag remove">Bypassare</div>
+        <div class="panel-label">Screenshot reale</div>
       </div>
-      <div class="flow-content">
-        <div class="flow-where">Su bSoul</div>
-        <h3>Acquisto</h3>
-        <p>La cliente (acquirente Pass Primavera Premium) riceve l&rsquo;email di invito con il Video 1 pre-acquisto di Martina. Compra &euro;97 su bSoul.</p>
+      <div class="panel-img dimmed">
+        <img src="img/dashboard.png" alt="Dashboard attuale martinabindi.com">
+        <div class="overlay-badge">Bypassare</div>
+      </div>
+      <div class="panel-body">
+        <h4>Dashboard post-login</h4>
+        <p>&ldquo;Benvenuta nel mondo di Martina Bindi ProAging&rdquo; con 3 card: Inizia da Qui / Corsi / Bacheca. La tester <strong>non deve passare da qui</strong>. Dopo il login deve atterrare direttamente sulla pagina contenuti.</p>
       </div>
     </div>
 
-    <!-- Step 2 -->
-    <div class="flow-step reveal">
-      <div class="flow-line">
-        <div class="flow-dot" style="background: var(--tan);">2</div>
-        <div class="flow-connector"></div>
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-status remove"></div>
+        <div class="panel-tag remove">Nascondere</div>
+        <div class="panel-label">Screenshot reale</div>
       </div>
-      <div class="flow-content">
-        <div class="flow-where">Email</div>
-        <h3>Ponte verso martinabindi.com</h3>
-        <p>Dopo l&rsquo;acquisto, riceve un&rsquo;email con le istruzioni per accedere a martinabindi.com. Il meccanismo di accesso controllato &egrave; da definire con Webhero (opzione consigliata: whitelist email o codice individuale).</p>
+      <div class="panel-img dimmed">
+        <img src="img/inizia_da_qui.png" alt="Pagina Inizia da qui">
+        <div class="overlay-badge">Nascondere</div>
       </div>
-    </div>
-
-    <!-- Step 3 -->
-    <div class="flow-step reveal">
-      <div class="flow-line">
-        <div class="flow-dot" style="background: var(--lavender);">3</div>
-        <div class="flow-connector"></div>
-      </div>
-      <div class="flow-content">
-        <div class="flow-where">martinabindi.com</div>
-        <h3>Login &rarr; Landing contenuti</h3>
-        <p>La tester fa login e atterra <strong>direttamente sulla pagina contenuti</strong> (modificata). Niente dashboard intermedia. La prima cosa che vede: introduzione + Video 2 di Martina + i due percorsi.</p>
+      <div class="panel-body">
+        <h4>Pagina &ldquo;Inizia da qui&rdquo;</h4>
+        <p>Piani di accesso Iscrizione Gratuita / Accesso Completo. <strong>Non serve</strong> &mdash; le tester hanno gi&agrave; pagato su bSoul. Va nascosta dalla navigazione.</p>
       </div>
     </div>
-
-    <!-- Step 4 -->
-    <div class="flow-step reveal">
-      <div class="flow-line">
-        <div class="flow-dot" style="background: var(--orange);">4</div>
-        <div class="flow-connector"></div>
-      </div>
-      <div class="flow-content">
-        <div class="flow-where">martinabindi.com &mdash; Percorso Corpo</div>
-        <h3>Sceglie il giorno</h3>
-        <p>Clicca su Percorso Corpo &rarr; vede le 7 card giornaliere (Luned&igrave; &rarr; Domenica). Clicca sul giorno.</p>
-      </div>
-    </div>
-
-    <!-- Step 4a (sub) -->
-    <div class="flow-step flow-sub reveal">
-      <div class="flow-line">
-        <div class="flow-dot" style="background: var(--white-20); color: var(--navy); font-size: 11px;">4a</div>
-        <div class="flow-connector"></div>
-      </div>
-      <div class="flow-content">
-        <h3>Pagina del giorno</h3>
-        <p>Atterra sulla pagina del giorno (es. &ldquo;Luned&igrave;&rdquo;). Vede: descrizione della routine, durata, accessori necessari, barra progresso. In fondo, nella sezione &ldquo;Programma Corso&rdquo;, trova il <strong>selettore livello</strong> (sostituisce gli accordion attuali).</p>
-      </div>
-    </div>
-
-    <!-- Step 4b (sub) -->
-    <div class="flow-step flow-sub reveal">
-      <div class="flow-line">
-        <div class="flow-dot" style="background: var(--white-20); color: var(--navy); font-size: 11px;">4b</div>
-        <div class="flow-connector"></div>
-      </div>
-      <div class="flow-content">
-        <h3>Selettore livello</h3>
-        <p>&ldquo;Come ti senti oggi? Scegli il tuo livello&rdquo; &rarr; <strong>Sedia</strong> / <strong>Base</strong> / <strong>Avanzato</strong> + <strong>Pillole</strong> (poco tempo) + <strong>Focus</strong> (extra energie). Sceglie il livello &rarr; atterra sul video player. Domenica = popup pausa &ldquo;Un giorno di pausa e relax tutto per te!&rdquo;</p>
-      </div>
-    </div>
-
-    <!-- Step 5 -->
-    <div class="flow-step reveal">
-      <div class="flow-line">
-        <div class="flow-dot" style="background: var(--lavender);">5</div>
-      </div>
-      <div class="flow-content">
-        <div class="flow-where">martinabindi.com &mdash; Percorso Viso</div>
-        <h3>Stessa struttura del Corpo</h3>
-        <p>7 card giornaliere (Giorno 1 &rarr; 7). Click su un giorno &rarr; pagina del giorno con descrizione (Drenaggio / Ossigenazione / Tonificazione) &rarr; video + focus opzionale. Giorno 4 = popup pausa. Oggi il Viso &egrave; una lista piatta di accordion &mdash; deve diventare navigazione a card come il Corpo.</p>
-      </div>
-    </div>
-
   </div>
-</section>
+</div>
 
-<!-- ═══════════════ LANDING POST-LOGIN ═══════════════ -->
-<section id="landing">
-  <div class="section-eyebrow reveal">02 &mdash; Landing post-login</div>
-  <h2 class="section-title reveal">Cosa vede la tester dopo il login</h2>
-  <p class="section-desc reveal">La pagina contenuti attuale deve essere ristrutturata. Niente dashboard intermedia &mdash; la tester atterra qui direttamente.</p>
+<!-- ═══ LANDING DESIDERATA ═══ -->
+<div class="sec" id="landing">
+  <div class="sec-eyebrow reveal">03 &mdash; Landing post-login</div>
+  <h2 class="sec-title reveal">Come deve diventare la pagina contenuti</h2>
+  <p class="sec-desc reveal">La pagina dove la tester atterra dopo il login. Oggi ha i percorsi presentati in modo disomogeneo &mdash; deve essere ristrutturata.</p>
 
-  <div class="landing-blueprint reveal">
-    <div class="blueprint-header">
-      <div class="blueprint-dot active"></div>
-      <div class="blueprint-dot"></div>
-      <div class="blueprint-dot"></div>
-      <span class="blueprint-url">martinabindi.com (post-login)</span>
+  <div class="wireframe reveal">
+    <div class="wf-browser">
+      <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+      <span class="wf-url">martinabindi.com &mdash; post-login (versione test)</span>
     </div>
-    <div class="blueprint-body">
-
-      <div class="blueprint-block new">
-        <div class="blueprint-label">Nuovo &mdash; da aggiungere</div>
+    <div class="wf-body">
+      <div class="wf-block is-new">
+        <div class="wf-badge">Nuovo</div>
         <h4>Introduzione + Video di benvenuto</h4>
-        <p>Testo di benvenuta + Video 2 post-acquisto (Martina accoglie, spiega cosa trova nella piattaforma, come funziona il metodo, come iniziare). Lo script del video esiste gi&agrave;.</p>
+        <p>Testo di benvenuta + Video 2 post-acquisto di Martina (lo script esiste gi&agrave;: benvenuta &rarr; cosa trovi &rarr; come funziona &rarr; il metodo &rarr; come iniziare).</p>
+        <div class="wf-detail">Questo blocco non esiste oggi &mdash; va creato da zero.</div>
       </div>
-
-      <div class="blueprint-block highlight">
-        <div class="blueprint-label">Modifica &mdash; ristrutturare</div>
+      <div class="wf-block is-change">
+        <div class="wf-badge">Modifica</div>
         <h4>&ldquo;Allenati con Pro Aging&rdquo; &mdash; 2 blocchi uguali</h4>
-        <p>Oggi: Corpo = 7 card in alto + Viso = 1 card separata sotto. Deve diventare: 2 blocchi paralleli, stessa dignit&agrave;.</p>
-        <div class="blueprint-two-col">
-          <div class="blueprint-percorso corpo">
-            <h5>Percorso Corpo</h5>
-            <p>7 card giornaliere (Lun &rarr; Dom)</p>
-          </div>
-          <div class="blueprint-percorso viso">
-            <h5>Percorso Viso</h5>
-            <p>7 card giornaliere (Giorno 1 &rarr; 7)</p>
-          </div>
+        <p>Oggi: Corpo = 7 card in alto, Viso = 1 card separata sotto. Devono diventare 2 blocchi paralleli, stessa struttura e importanza visiva.</p>
+        <div class="wf-two-col">
+          <div class="wf-percorso corpo"><h5>Percorso Corpo</h5><p>7 card giornaliere (Lun &rarr; Dom)</p></div>
+          <div class="wf-percorso viso"><h5>Percorso Viso</h5><p>7 card giornaliere (Giorno 1 &rarr; 7)</p></div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="blueprint-block highlight">
-        <div class="blueprint-label">Modifica &mdash; Percorso Corpo</div>
-        <h4>Card giornaliere &rarr; Pagina giorno &rarr; Selettore livello</h4>
-        <p>Click su una card &rarr; pagina del giorno (descrizione, durata, accessori, progresso). Nella sezione &ldquo;Programma Corso&rdquo;: il selettore livello <strong>sostituisce</strong> gli accordion attuali (Forza sulla sedia, Forza base, ecc.).</p>
-        <div class="blueprint-cards">
-          <div class="blueprint-card-mini card-warm">Lun</div>
-          <div class="blueprint-card-mini card-warm">Mar</div>
-          <div class="blueprint-card-mini card-warm">Mer</div>
-          <div class="blueprint-card-mini card-warm">Gio</div>
-          <div class="blueprint-card-mini card-warm">Ven</div>
-          <div class="blueprint-card-mini card-cool">Sab</div>
-          <div class="blueprint-card-mini card-cool">Dom</div>
+  <h3 class="reveal" style="font-family:var(--font-display);font-size:26px;color:var(--navy);margin:64px 0 8px">Percorso Corpo &mdash; Pagina del giorno</h3>
+  <p class="reveal" style="font-size:14px;color:var(--text-soft);margin-bottom:28px;line-height:1.7">Quando la tester clicca su un giorno (es. Luned&igrave;), atterra qui. La sezione &ldquo;Programma Corso&rdquo; cambia.</p>
+
+  <div class="wireframe reveal">
+    <div class="wf-browser">
+      <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+      <span class="wf-url">martinabindi.com &mdash; Luned&igrave; (esempio)</span>
+    </div>
+    <div class="wf-body">
+      <div class="wf-block" style="border-style:solid;border-color:#ddd">
+        <div class="wf-badge" style="color:var(--text-muted)">Resta</div>
+        <h4>Titolo giorno + descrizione + accessori + progresso</h4>
+        <p>Questa parte della pagina resta com&rsquo;&egrave;: titolo del giorno, descrizione della routine, durata, lista accessori, barra completamento.</p>
+      </div>
+      <div class="wf-block is-change">
+        <div class="wf-badge">Modifica chiave</div>
+        <h4>&ldquo;Programma Corso&rdquo; &mdash; Selettore livello al posto degli accordion</h4>
+        <p>Oggi ci sono gli accordion: Forza sulla sedia / Forza base / Forza avanzato / Pillole di Forza / Focus giornalieri. Devono essere <strong>sostituiti</strong> con il selettore visuale a bottoni.</p>
+        <div class="wf-selector">
+          <div class="wf-sel-title">Come ti senti oggi? Scegli il tuo livello</div>
+          <div class="wf-sel-btn orange">Sedia</div>
+          <div class="wf-sel-btn orange" style="opacity:0.85">Base</div>
+          <div class="wf-sel-btn orange" style="opacity:0.7">Avanzato</div>
+          <div style="font-size:11px;color:var(--text-muted);text-align:center;margin:8px 0 4px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Se hai poco tempo</div>
+          <div class="wf-sel-btn navy">Pillole</div>
+          <div style="font-size:11px;color:var(--text-muted);text-align:center;margin:8px 0 4px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Hai ancora energie?</div>
+          <div class="wf-sel-btn navy">Focus</div>
         </div>
+        <div class="wf-detail">Il componente selettore esiste gi&agrave; nella piattaforma &mdash; va usato al posto degli accordion.</div>
       </div>
-
-      <div class="blueprint-block highlight">
-        <div class="blueprint-label">Modifica &mdash; Percorso Viso</div>
-        <h4>Da lista accordion a 7 card giornaliere</h4>
-        <p>Oggi il Percorso Viso &egrave; una lista piatta (1&deg; Giorno Drenaggio, 2&deg; Giorno Ossigenazione...). Deve diventare 7 card con la stessa navigazione del Corpo. Click &rarr; pagina del giorno &rarr; video + focus opzionale. Giorno 4 = popup pausa.</p>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="note-box reveal" style="margin-top: 40px;">
-    <h4>Pagine da nascondere/bypassare</h4>
-    <p><strong>Dashboard scura</strong> (&ldquo;Benvenuta nel mondo di Martina Bindi ProAging&rdquo; con 3 card: Inizia da Qui / Corsi / Bacheca) &mdash; la tester non deve passare da qui. Va bypassata: login &rarr; landing contenuti diretta.<br><strong>Pagina &ldquo;Inizia da qui&rdquo;</strong> (con piani Iscrizione Gratuita / Accesso Completo) &mdash; non serve, la tester ha gi&agrave; pagato su bSoul.</p>
-  </div>
-</section>
-
-<!-- ═══════════════ MODIFICHE ═══════════════ -->
-<section class="detail-section full-width" id="modifiche">
-  <div class="section-eyebrow reveal">03 &mdash; Modifiche richieste</div>
-  <h2 class="section-title reveal">Lista completa interventi</h2>
-  <p class="section-desc reveal">Divisa per responsabilit&agrave;: cosa chiediamo a Webhero e cosa facciamo internamente.</p>
-
-  <!-- WEBHERO -->
-  <h3 class="reveal" style="font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; margin-top: 20px;">Webhero</h3>
-
-  <div class="tasks-grid">
-    <div class="task-card reveal">
-      <div class="task-num webhero">1</div>
-      <div class="task-body">
-        <h4>Meccanismo di accesso controllato</h4>
-        <p>L&rsquo;acquisto avviene su bSoul, non su martinabindi.com. Serve un meccanismo per controllare chi pu&ograve; registrarsi/accedere alla piattaforma. ~100+ persone attese. Opzioni proposte: <strong>whitelist per email</strong> (Alberto carica le email delle acquirenti, il sistema verifica alla registrazione) oppure <strong>codice individuale</strong> (ogni acquirente riceve un codice monouso). Da discutere fattibilit&agrave; e tempi nella call.</p>
-        <div class="task-owner webhero">Webhero &mdash; da definire in call</div>
-      </div>
-    </div>
-
-    <div class="task-card reveal">
-      <div class="task-num webhero">2</div>
-      <div class="task-body">
-        <h4>Bypass dashboard &mdash; login diretto alla pagina contenuti</h4>
-        <p>Oggi dopo il login la tester atterra sulla dashboard scura con 3 card (Inizia da Qui / Corsi / Bacheca). Per il test, dopo il login deve atterrare <strong>direttamente sulla pagina contenuti</strong> (quella con i percorsi), saltando la dashboard.</p>
-        <div class="task-owner webhero">Webhero</div>
-      </div>
-    </div>
-
-    <div class="task-card reveal">
-      <div class="task-num webhero">3</div>
-      <div class="task-body">
-        <h4>Aggiungere sezione introduzione + video alla landing</h4>
-        <p>In cima alla pagina contenuti: aggiungere un blocco con testo di benvenuta e embed del Video 2 post-acquisto di Martina. Questo diventa la prima cosa che la tester vede dopo il login.</p>
-        <div class="task-owner webhero">Webhero</div>
-      </div>
-    </div>
-
-    <div class="task-card reveal">
-      <div class="task-num webhero">4</div>
-      <div class="task-body">
-        <h4>Ristrutturare landing: 2 percorsi come blocchi uguali e paralleli</h4>
-        <p>Oggi il Percorso Corpo (7 card) e il Percorso Viso (1 card) sono presentati in modo diverso sulla stessa pagina. Devono diventare <strong>2 blocchi paralleli, con la stessa struttura e dignit&agrave;</strong>, sotto un&rsquo;unica sezione &ldquo;Allenati con Pro Aging&rdquo;.</p>
-        <div class="task-owner webhero">Webhero</div>
-      </div>
-    </div>
-
-    <div class="task-card reveal">
-      <div class="task-num webhero">5</div>
-      <div class="task-body">
-        <h4>Percorso Viso: da lista accordion a navigazione 7 card</h4>
-        <p>Oggi il Percorso Viso &egrave; una pagina con una lista piatta di accordion (1&deg; Giorno Drenaggio, 2&deg; Giorno Ossigenazione...). Deve diventare la stessa struttura del Percorso Corpo: <strong>7 card giornaliere</strong> &rarr; click su un giorno &rarr; pagina del giorno con video + focus opzionale. Giorno 4 = popup pausa (come la domenica del Corpo).</p>
-        <div class="task-owner webhero">Webhero</div>
-      </div>
-    </div>
-
-    <div class="task-card reveal">
-      <div class="task-num webhero">6</div>
-      <div class="task-body">
-        <h4>Sostituire accordion con selettore livello (Percorso Corpo)</h4>
-        <p>Nelle pagine giorno del Percorso Corpo, la sezione &ldquo;Programma Corso&rdquo; ha oggi degli accordion (Forza sulla sedia / Forza base / Forza avanzato / Pillole di Forza / Focus giornalieri). Devono essere sostituiti con il <strong>selettore visuale a bottoni</strong> gi&agrave; esistente (&ldquo;Come ti senti oggi? Scegli il tuo livello&rdquo;: Sedia / Base / Avanzato + Pillole + Focus).</p>
-        <div class="task-owner webhero">Webhero</div>
-      </div>
-    </div>
-
-    <div class="task-card reveal">
-      <div class="task-num webhero">7</div>
-      <div class="task-body">
-        <h4>Nascondere pagina &ldquo;Inizia da qui&rdquo;</h4>
-        <p>La pagina con i piani di accesso (Iscrizione Gratuita / Accesso Completo) non serve per il test &mdash; le tester hanno gi&agrave; pagato su bSoul. Va nascosta o rimossa dalla navigazione.</p>
-        <div class="task-owner webhero">Webhero</div>
+      <div class="wf-arrow">&darr;</div>
+      <div class="wf-block" style="border-style:solid;border-color:#ddd">
+        <div class="wf-badge" style="color:var(--text-muted)">Resta</div>
+        <h4>Video player</h4>
+        <p>Il player video e i contenuti funzionano gi&agrave;. Nessuna modifica necessaria.</p>
       </div>
     </div>
   </div>
 
-  <!-- INTERNI -->
-  <h3 class="reveal" style="font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-soft); margin-bottom: 20px; margin-top: 48px;">Interni (Niccol&ograve; + Alberto)</h3>
+  <h3 class="reveal" style="font-family:var(--font-display);font-size:26px;color:var(--navy);margin:64px 0 8px">Percorso Viso &mdash; Da accordion a 7 card</h3>
+  <p class="reveal" style="font-size:14px;color:var(--text-soft);margin-bottom:28px;line-height:1.7">Oggi il Percorso Viso &egrave; una lista piatta. Deve diventare 7 card con la stessa navigazione del Corpo.</p>
 
-  <div class="tasks-grid">
-    <div class="task-card reveal">
-      <div class="task-num internal">A</div>
-      <div class="task-body">
-        <h4>Cambiare linguaggio &ldquo;allenamento&rdquo; &rarr; pro-aging</h4>
-        <p>Tutta la piattaforma usa &ldquo;allenamento&rdquo; (Allenamento Luned&igrave;, Allenamento Sedia, Comincia con gli allenamenti del giorno, ecc.). Va sostituito con linguaggio pro-aging coerente col positioning: &ldquo;percorso&rdquo;, &ldquo;programma&rdquo;, &ldquo;esercizi&rdquo;, &ldquo;cura&rdquo;.</p>
-        <div class="task-owner internal">Niccol&ograve; + Alberto</div>
-      </div>
+  <div class="wireframe reveal">
+    <div class="wf-browser">
+      <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+      <span class="wf-url">martinabindi.com &mdash; Percorso Viso (versione desiderata)</span>
     </div>
-
-    <div class="task-card reveal">
-      <div class="task-num internal">B</div>
-      <div class="task-body">
-        <h4>Aggiungere immagini alle card giornaliere</h4>
-        <p>Le 7 card del Percorso Corpo oggi sono gradient colorati senza immagini. Le 7 card nuove del Percorso Viso serviranno immagini da zero. Servono immagini/thumbnail per ogni card.</p>
-        <div class="task-owner internal">Niccol&ograve; + Alberto</div>
+    <div class="wf-body">
+      <div class="wf-block is-change">
+        <div class="wf-badge">Da trasformare</div>
+        <h4>7 card giornaliere (come il Corpo)</h4>
+        <p>Ogni card = un giorno del ciclo. Click &rarr; pagina del giorno con video + focus opzionale.</p>
+        <div class="wf-cards">
+          <div class="wf-card-mini lav">G1<br>Dren.</div>
+          <div class="wf-card-mini lav">G2<br>Ossig.</div>
+          <div class="wf-card-mini lav">G3<br>Tonif.</div>
+          <div class="wf-card-mini pause">G4<br>Pausa</div>
+          <div class="wf-card-mini lav">G5<br>Dren.</div>
+          <div class="wf-card-mini lav">G6<br>Ossig.</div>
+          <div class="wf-card-mini lav">G7<br>Tonif.</div>
+        </div>
+        <div class="wf-detail">Giorno 4 = popup pausa (stesso meccanismo della domenica del Corpo, gi&agrave; funzionante).</div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- ═══════════════ GIA' FUNZIONA ═══════════════ -->
-<section>
-  <div class="section-eyebrow reveal">Gi&agrave; pronto</div>
-  <h2 class="section-title reveal">Cosa non va toccato</h2>
-  <p class="section-desc reveal">Queste funzionalit&agrave; esistono e funzionano gi&agrave;. Non richiedono interventi per il test.</p>
-
-  <div class="works-grid">
-    <div class="works-card reveal">
-      <div class="works-icon">&#9654;</div>
-      <h4>Video player</h4>
-      <p>Il player video funziona, i contenuti sono caricati (Percorso Corpo + Percorso Viso).</p>
-    </div>
-    <div class="works-card reveal">
-      <div class="works-icon">&#9632;</div>
-      <h4>Tracking progresso</h4>
-      <p>La barra di completamento 0-100% esiste ed &egrave; funzionante su ogni percorso.</p>
-    </div>
-    <div class="works-card reveal">
-      <div class="works-icon">&#128260;</div>
-      <h4>Popup pausa</h4>
-      <p>Il popup &ldquo;Un giorno di pausa e relax tutto per te!&rdquo; (domenica / giorno 4 viso) funziona gi&agrave;.</p>
-    </div>
-    <div class="works-card reveal">
-      <div class="works-icon">&#128100;</div>
-      <h4>Account utente</h4>
-      <p>Registrazione, login e bacheca WooCommerce funzionano. Gestione ordini e dati account attivi.</p>
-    </div>
-    <div class="works-card reveal">
-      <div class="works-icon">&#127916;</div>
-      <h4>Contenuti video</h4>
-      <p>Tutti i video dei percorsi (corpo 3 livelli + pillole + focus, viso 7 giorni) sono caricati.</p>
-    </div>
-    <div class="works-card reveal">
-      <div class="works-icon">&#128256;</div>
-      <h4>Selettore livello</h4>
-      <p>Il componente visuale &ldquo;Come ti senti oggi?&rdquo; con i bottoni (Sedia/Base/Avanzato/Pillole/Focus) esiste gi&agrave; &mdash; va solo usato al posto degli accordion.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ AGENDA CALL ═══════════════ -->
-<section class="agenda-section full-width" id="agenda">
-  <div class="section-eyebrow reveal">04 &mdash; Call Webhero</div>
-  <h2 class="section-title reveal">Agenda suggerita</h2>
-  <p class="section-desc reveal">Punti da affrontare nella call, in ordine di priorit&agrave;.</p>
-
-  <div class="agenda-list">
-    <div class="agenda-item reveal">
-      <div class="agenda-num">1</div>
-      <div class="agenda-body">
-        <h4>Meccanismo accesso controllato</h4>
-        <p>L&rsquo;acquisto &egrave; su bSoul. Come controlliamo chi si registra su martinabindi.com? Whitelist email, codice individuale, o altra soluzione? Quale &egrave; la pi&ugrave; veloce da implementare? Quanto tempo serve?</p>
-      </div>
-    </div>
-    <div class="agenda-item reveal">
-      <div class="agenda-num">2</div>
-      <div class="agenda-body">
-        <h4>Bypass dashboard post-login</h4>
-        <p>Si pu&ograve; far atterrare la tester direttamente sulla pagina contenuti dopo il login, saltando la dashboard con le 3 card? Come si implementa?</p>
-      </div>
-    </div>
-    <div class="agenda-item reveal">
-      <div class="agenda-num">3</div>
-      <div class="agenda-body">
-        <h4>Ristrutturazione landing contenuti</h4>
-        <p>Aggiunta blocco intro + video in cima. Ristrutturazione percorsi Corpo e Viso come 2 blocchi uguali. Fattibilit&agrave; e tempi.</p>
-      </div>
-    </div>
-    <div class="agenda-item reveal">
-      <div class="agenda-num">4</div>
-      <div class="agenda-body">
-        <h4>Percorso Viso: da accordion a card</h4>
-        <p>Trasformare la lista piatta del Percorso Viso in 7 card con la stessa navigazione del Corpo. Quanto lavoro richiede?</p>
-      </div>
-    </div>
-    <div class="agenda-item reveal">
-      <div class="agenda-num">5</div>
-      <div class="agenda-body">
-        <h4>Accordion &rarr; selettore livello (Corpo)</h4>
-        <p>Sostituire gli accordion in &ldquo;Programma Corso&rdquo; con il selettore visuale a bottoni che gi&agrave; esiste. Serve codice nuovo o &egrave; una riconfigurazione?</p>
-      </div>
-    </div>
-    <div class="agenda-item reveal">
-      <div class="agenda-num">6</div>
-      <div class="agenda-body">
-        <h4>Timeline complessiva</h4>
-        <p>Quanto tempo serve per tutti gli interventi? Cosa pu&ograve; essere fatto in parallelo? C&rsquo;&egrave; un ordine di dipendenze? Il test &egrave; a maggio &mdash; quali sono i vincoli?</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<div class="footer">
-  Brief Tecnico Piattaforma MPAS &mdash; Test Maggio 2026 &mdash; Documento interno per call Webhero &mdash; 14 aprile 2026
 </div>
+
+<!-- ═══ MODIFICHE ═══ -->
+<div class="tasks-section" id="modifiche">
+  <div class="sec-eyebrow reveal">04 &mdash; Lista completa interventi</div>
+  <h2 class="sec-title reveal">Modifiche richieste</h2>
+  <p class="sec-desc reveal">Divise per responsabilit&agrave;: cosa chiediamo a Webhero e cosa facciamo internamente.</p>
+
+  <div class="tasks-group-title webhero reveal">Webhero &mdash; 7 interventi</div>
+  <div class="task-list">
+    <div class="task-item reveal"><div class="task-n wh">1</div><div class="task-info"><h4>Meccanismo di accesso controllato</h4><p>L&rsquo;acquisto avviene su bSoul, non su martinabindi.com. Serve un meccanismo per controllare chi pu&ograve; registrarsi. ~100+ persone. Opzioni: <strong>whitelist per email</strong> o <strong>codice individuale monouso</strong>. Da discutere fattibilit&agrave; e tempi.</p></div></div>
+    <div class="task-item reveal"><div class="task-n wh">2</div><div class="task-info"><h4>Bypass dashboard &mdash; login diretto alla pagina contenuti</h4><p>Oggi dopo il login la tester atterra sulla dashboard scura con 3 card. Per il test, dopo il login deve atterrare <strong>direttamente sulla pagina contenuti</strong>, saltando la dashboard.</p></div></div>
+    <div class="task-item reveal"><div class="task-n wh">3</div><div class="task-info"><h4>Aggiungere sezione introduzione + video alla landing</h4><p>In cima alla pagina contenuti: blocco con testo di benvenuta + embed del <strong>Video 2 post-acquisto</strong> di Martina. Prima cosa che la tester vede dopo il login.</p></div></div>
+    <div class="task-item reveal"><div class="task-n wh">4</div><div class="task-info"><h4>Ristrutturare landing: 2 percorsi come blocchi uguali</h4><p>Oggi Corpo (7 card) e Viso (1 card) sono presentati diversamente. Devono diventare <strong>2 blocchi paralleli, stessa struttura e importanza</strong>, sotto &ldquo;Allenati con Pro Aging&rdquo;.</p></div></div>
+    <div class="task-item reveal"><div class="task-n wh">5</div><div class="task-info"><h4>Percorso Viso: da lista accordion a navigazione 7 card</h4><p>Oggi il Percorso Viso &egrave; una lista piatta di accordion. Deve diventare <strong>7 card giornaliere</strong> &rarr; click &rarr; pagina del giorno con video + focus opzionale. Giorno 4 = popup pausa.</p></div></div>
+    <div class="task-item reveal"><div class="task-n wh">6</div><div class="task-info"><h4>Sostituire accordion con selettore livello (Percorso Corpo)</h4><p>Nelle pagine giorno del Corpo, sezione &ldquo;Programma Corso&rdquo;: gli accordion vanno sostituiti con il <strong>selettore visuale a bottoni</strong> gi&agrave; esistente (&ldquo;Come ti senti oggi? Scegli il tuo livello&rdquo;).</p></div></div>
+    <div class="task-item reveal"><div class="task-n wh">7</div><div class="task-info"><h4>Nascondere pagina &ldquo;Inizia da qui&rdquo;</h4><p>La pagina con i piani di accesso (Iscrizione Gratuita / Accesso Completo) non serve per il test. Le tester hanno gi&agrave; pagato su bSoul. Va nascosta dalla navigazione.</p></div></div>
+  </div>
+
+  <div class="tasks-group-title internal reveal">Interni (Niccol&ograve; + Alberto) &mdash; 2 interventi</div>
+  <div class="task-list">
+    <div class="task-item reveal"><div class="task-n int">A</div><div class="task-info"><h4>Cambiare linguaggio &ldquo;allenamento&rdquo; &rarr; pro-aging</h4><p>Tutta la piattaforma usa &ldquo;allenamento&rdquo;. Va sostituito con linguaggio pro-aging: &ldquo;percorso&rdquo;, &ldquo;programma&rdquo;, &ldquo;esercizi&rdquo;, &ldquo;cura&rdquo;.</p></div></div>
+    <div class="task-item reveal"><div class="task-n int">B</div><div class="task-info"><h4>Aggiungere immagini alle card giornaliere</h4><p>Le 7 card del Corpo oggi sono gradient senza immagini. Le 7 card nuove del Viso serviranno immagini da zero.</p></div></div>
+  </div>
+</div>
+
+<!-- ═══ GIA' FUNZIONA ═══ -->
+<div class="sec">
+  <div class="sec-eyebrow reveal">Gi&agrave; pronto</div>
+  <h2 class="sec-title reveal">Cosa non va toccato</h2>
+  <p class="sec-desc reveal">Funzionalit&agrave; che esistono e funzionano. Nessun intervento richiesto.</p>
+  <div class="works-grid">
+    <div class="works-item reveal"><h4>Video player</h4><p>Player funzionante, contenuti caricati (Corpo 3 livelli + Pillole + Focus, Viso 7 giorni).</p></div>
+    <div class="works-item reveal"><h4>Tracking progresso</h4><p>Barra completamento 0-100% funzionante su ogni percorso.</p></div>
+    <div class="works-item reveal"><h4>Popup pausa</h4><p>&ldquo;Un giorno di pausa e relax tutto per te!&rdquo; &mdash; domenica e giorno 4 viso.</p></div>
+    <div class="works-item reveal"><h4>Account utente</h4><p>Registrazione, login, bacheca WooCommerce. Gestione ordini e dati account.</p></div>
+    <div class="works-item reveal"><h4>Contenuti video</h4><p>Tutti i video dei percorsi sono caricati e funzionanti.</p></div>
+    <div class="works-item reveal"><h4>Selettore livello (componente)</h4><p>Il popup &ldquo;Come ti senti oggi?&rdquo; con i bottoni esiste gi&agrave; &mdash; va solo usato al posto degli accordion.</p></div>
+  </div>
+</div>
+
+<!-- ═══ AGENDA ═══ -->
+<div class="agenda-wrap" id="agenda">
+  <div class="sec-eyebrow reveal">05 &mdash; Call Webhero</div>
+  <h2 class="sec-title reveal">Agenda suggerita</h2>
+  <p class="sec-desc reveal">Punti da affrontare nella call, in ordine di priorit&agrave;.</p>
+  <div class="agenda-list">
+    <div class="agenda-item reveal"><div class="agenda-n">1</div><div class="agenda-info"><h4>Meccanismo accesso controllato</h4><p>L&rsquo;acquisto &egrave; su bSoul. Come controlliamo chi si registra su martinabindi.com? Whitelist email, codice individuale, o altra soluzione? Quale &egrave; la pi&ugrave; veloce?</p></div></div>
+    <div class="agenda-item reveal"><div class="agenda-n">2</div><div class="agenda-info"><h4>Bypass dashboard post-login</h4><p>Si pu&ograve; far atterrare la tester direttamente sulla pagina contenuti dopo il login, saltando la dashboard con le 3 card?</p></div></div>
+    <div class="agenda-item reveal"><div class="agenda-n">3</div><div class="agenda-info"><h4>Ristrutturazione landing contenuti</h4><p>Blocco intro + video in cima. Due percorsi come blocchi uguali. Fattibilit&agrave; e tempi.</p></div></div>
+    <div class="agenda-item reveal"><div class="agenda-n">4</div><div class="agenda-info"><h4>Percorso Viso: da accordion a 7 card</h4><p>Trasformare la lista piatta del Percorso Viso in 7 card con la stessa navigazione del Corpo. Quanto lavoro richiede?</p></div></div>
+    <div class="agenda-item reveal"><div class="agenda-n">5</div><div class="agenda-info"><h4>Accordion &rarr; selettore livello (Corpo)</h4><p>Sostituire gli accordion in &ldquo;Programma Corso&rdquo; con il selettore visuale a bottoni che gi&agrave; esiste. Serve codice nuovo o &egrave; riconfigurazione?</p></div></div>
+    <div class="agenda-item reveal"><div class="agenda-n">6</div><div class="agenda-info"><h4>Timeline complessiva</h4><p>Quanto tempo serve per tutti gli interventi? Cosa si fa in parallelo? Il test &egrave; a maggio &mdash; quali sono i vincoli?</p></div></div>
+  </div>
+</div>
+
+<div class="footer">Brief Tecnico Piattaforma MPAS &mdash; Test Maggio 2026 &mdash; Documento interno per call Webhero &mdash; 14 aprile 2026</div>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+  const o = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => o.observe(el));
   window.addEventListener('scroll', () => {
-    const scrollTop = document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-    document.querySelector('.progress-bar').style.width = progress + '%';
+    const s = document.documentElement.scrollTop, h = document.documentElement.scrollHeight - window.innerHeight;
+    document.querySelector('.progress-bar').style.width = (h>0?(s/h)*100:0)+'%';
   }, { passive: true });
 </script>
 
