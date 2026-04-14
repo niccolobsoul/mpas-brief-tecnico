@@ -447,7 +447,25 @@
   <h2 class="sec-title reveal">Come deve diventare la pagina contenuti</h2>
   <p class="sec-desc reveal">La pagina dove la tester atterra dopo il login. Oggi ha i percorsi presentati in modo disomogeneo &mdash; deve essere ristrutturata.</p>
 
-  <div class="wireframe reveal">
+  <!-- STATO ATTUALE: landing -->
+  <div class="panel reveal" style="margin-bottom:32px">
+    <div class="panel-header">
+      <div class="panel-status" style="background:var(--orange)"></div>
+      <div class="panel-tag" style="background:var(--orange-glow);color:var(--orange)">Stato attuale</div>
+      <div class="panel-label">Screenshot reale &mdash; pagina contenuti oggi</div>
+    </div>
+    <div class="panel-img">
+      <img src="img/landing_attuale.png" alt="Landing contenuti attuale" style="width:100%;display:block">
+    </div>
+    <div class="panel-body">
+      <h4>Pagina contenuti oggi</h4>
+      <p>Corpo: 7 card in alto (&ldquo;Comincia con gli allenamenti del giorno&rdquo;). Viso: 1 card separata sotto (&ldquo;Allenati con Proaging &rarr; Percorso Viso&rdquo;). I due percorsi hanno struttura e peso visivo diverso. Manca introduzione e video di benvenuto.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:12px 0;font-size:14px;font-weight:700;color:var(--orange);letter-spacing:3px;text-transform:uppercase" class="reveal">&#9660; Come deve diventare &#9660;</div>
+
+  <div class="wireframe reveal" style="margin-top:16px">
     <div class="wf-browser">
       <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
       <span class="wf-url">martinabindi.com &mdash; post-login (versione test)</span>
@@ -474,7 +492,42 @@
   <h3 class="reveal" style="font-family:var(--font-display);font-size:26px;color:var(--navy);margin:64px 0 8px">Percorso Corpo &mdash; Pagina del giorno</h3>
   <p class="reveal" style="font-size:14px;color:var(--text-soft);margin-bottom:28px;line-height:1.7">Quando la tester clicca su un giorno (es. Luned&igrave;), atterra qui. La sezione &ldquo;Programma Corso&rdquo; cambia.</p>
 
-  <div class="wireframe reveal">
+  <!-- STATO ATTUALE: pagina giorno con accordion -->
+  <div class="panel-grid reveal" style="margin-bottom:32px">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-status" style="background:var(--orange)"></div>
+        <div class="panel-tag" style="background:var(--orange-glow);color:var(--orange)">Stato attuale</div>
+        <div class="panel-label">Pagina giorno con accordion</div>
+      </div>
+      <div class="panel-img">
+        <img src="img/giorno_accordion.png" alt="Pagina giorno con accordion">
+      </div>
+      <div class="panel-body">
+        <h4>Oggi: accordion nella sezione &ldquo;Programma Corso&rdquo;</h4>
+        <p>Forza sulla sedia / Forza base / Forza avanzato / Pillole di Forza / Focus giornalieri. Linguaggio tecnico, struttura da catalogo.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-status" style="background:var(--green)"></div>
+        <div class="panel-tag" style="background:var(--green-glow);color:var(--green)">Esiste gi&agrave;</div>
+        <div class="panel-label">Componente selettore livello</div>
+      </div>
+      <div class="panel-img">
+        <img src="img/selettore_livello.png" alt="Selettore livello esistente">
+      </div>
+      <div class="panel-body">
+        <h4>Il selettore a bottoni esiste gi&agrave;</h4>
+        <p>&ldquo;Come ti senti oggi? Scegli il tuo livello&rdquo; con Sedia / Base / Avanzato + Pillole + Focus. Questo componente deve <strong>sostituire</strong> gli accordion sopra.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:12px 0;font-size:14px;font-weight:700;color:var(--orange);letter-spacing:3px;text-transform:uppercase" class="reveal">&#9660; Come deve diventare &#9660;</div>
+
+  <div class="wireframe reveal" style="margin-top:16px">
     <div class="wf-browser">
       <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
       <span class="wf-url">martinabindi.com &mdash; Luned&igrave; (esempio)</span>
@@ -513,7 +566,25 @@
   <h3 class="reveal" style="font-family:var(--font-display);font-size:26px;color:var(--navy);margin:64px 0 8px">Percorso Viso &mdash; Da accordion a 7 card</h3>
   <p class="reveal" style="font-size:14px;color:var(--text-soft);margin-bottom:28px;line-height:1.7">Oggi il Percorso Viso &egrave; una lista piatta. Deve diventare 7 card con la stessa navigazione del Corpo.</p>
 
-  <div class="wireframe reveal">
+  <!-- STATO ATTUALE: Percorso Viso accordion -->
+  <div class="panel reveal" style="margin-bottom:32px;max-width:700px">
+    <div class="panel-header">
+      <div class="panel-status" style="background:var(--orange)"></div>
+      <div class="panel-tag" style="background:var(--orange-glow);color:var(--orange)">Stato attuale</div>
+      <div class="panel-label">Screenshot reale</div>
+    </div>
+    <div class="panel-img">
+      <img src="img/viso_accordion.png" alt="Percorso Viso attuale con accordion">
+    </div>
+    <div class="panel-body">
+      <h4>Oggi: lista piatta di accordion</h4>
+      <p>1&deg; Giorno Drenaggio, 2&deg; Giorno Ossigenazione, 3&deg; Giorno Tonificazione, 4&deg; Pausa, 5-7 ripetizione. Tutto in una pagina, nessuna navigazione a card.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:12px 0;font-size:14px;font-weight:700;color:var(--orange);letter-spacing:3px;text-transform:uppercase" class="reveal">&#9660; Come deve diventare &#9660;</div>
+
+  <div class="wireframe reveal" style="margin-top:16px">
     <div class="wf-browser">
       <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
       <span class="wf-url">martinabindi.com &mdash; Percorso Viso (versione desiderata)</span>
