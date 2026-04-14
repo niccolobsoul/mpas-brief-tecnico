@@ -361,7 +361,7 @@
     <div class="flow-card">
       <div class="fc-where">martinabindi.com</div>
       <h3>Login &rarr; Landing contenuti (diretta)</h3>
-      <p>Fa login e atterra <strong>direttamente sulla pagina contenuti</strong> (modificata). Niente dashboard intermedia. Prima cosa che vede: introduzione + Video 2 di Martina + i due percorsi.</p>
+      <p>Fa login e atterra <strong>direttamente sulla pagina contenuti</strong> (modificata). Niente dashboard intermedia. Prima cosa che vede: introduzione + Video 2 di Martina, poi header con 3 sezioni (Test / Approfondimenti / Parola degli Esperti), disclaimer medico-legale, e i due percorsi.</p>
     </div>
   </div>
 
@@ -477,6 +477,34 @@
         <p>Testo di benvenuta + Video 2 post-acquisto di Martina (lo script esiste gi&agrave;: benvenuta &rarr; cosa trovi &rarr; come funziona &rarr; il metodo &rarr; come iniziare).</p>
         <div class="wf-detail">Questo blocco non esiste oggi &mdash; va creato da zero.</div>
       </div>
+
+      <div class="wf-block is-new">
+        <div class="wf-badge">Nuovo &mdash; Header 3 sezioni</div>
+        <h4>Header navigazione: Test / Approfondimenti / Parola degli Esperti</h4>
+        <p>Tre sezioni accessibili dall&rsquo;header, sopra i blocchi Viso e Corpo:</p>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <div style="flex:1;background:var(--orange-glow);border:1px solid var(--orange);border-radius:10px;padding:16px;text-align:center">
+            <div style="font-size:13px;font-weight:700;color:var(--orange);margin-bottom:4px">Test</div>
+            <div style="font-size:11px;color:var(--text-soft);line-height:1.5">Auto-test per valutare postura, cellulite, ecc.</div>
+          </div>
+          <div style="flex:1;background:var(--tan-glow);border:1px solid var(--tan);border-radius:10px;padding:16px;text-align:center">
+            <div style="font-size:13px;font-weight:700;color:var(--tan);margin-bottom:4px">Approfondimenti</div>
+            <div style="font-size:11px;color:var(--text-soft);line-height:1.5">Martina spiega il perch&eacute; di posture, modi di respirare, ecc.</div>
+          </div>
+          <div style="flex:1;background:var(--lavender-soft);border:1px solid var(--lavender);border-radius:10px;padding:16px;text-align:center">
+            <div style="font-size:13px;font-weight:700;color:var(--lavender);margin-bottom:4px">Parola degli Esperti</div>
+            <div style="font-size:11px;color:var(--text-soft);line-height:1.5">Video di Martina con: urologo, fisiatra e osteopata, nutrizionista, geriatra, nutrizione dello sport, psicoterapeuta</div>
+          </div>
+        </div>
+        <div class="wf-detail">Questo header non esiste oggi &mdash; va creato da zero.</div>
+      </div>
+
+      <div class="wf-block is-new" style="border-color:#c0392b;background:var(--red-glow)">
+        <div class="wf-badge" style="color:#c0392b">Obbligatorio &mdash; Legale</div>
+        <h4>Disclaimer medico-legale</h4>
+        <p>Claim redatto dall&rsquo;avvocato: invito a consultare il proprio medico in caso di patologie particolari. Esclusione di responsabilit&agrave;. <strong>Posizione da definire</strong> (visibile prima di accedere ai contenuti o in fondo alla pagina).</p>
+      </div>
+
       <div class="wf-block is-change">
         <div class="wf-badge">Modifica</div>
         <h4>&ldquo;Allenati con Pro Aging&rdquo; &mdash; 2 blocchi uguali</h4>
@@ -615,7 +643,7 @@
   <h2 class="sec-title reveal">Modifiche richieste</h2>
   <p class="sec-desc reveal">Divise per responsabilit&agrave;: cosa chiediamo a Webhero e cosa facciamo internamente.</p>
 
-  <div class="tasks-group-title webhero reveal">Webhero &mdash; 7 interventi</div>
+  <div class="tasks-group-title webhero reveal">Webhero &mdash; 9 interventi</div>
   <div class="task-list">
     <div class="task-item reveal"><div class="task-n wh">1</div><div class="task-info"><h4>Meccanismo di accesso controllato</h4><p>L&rsquo;acquisto avviene su bSoul, non su martinabindi.com. Serve un meccanismo per controllare chi pu&ograve; registrarsi. ~100+ persone. Opzioni: <strong>whitelist per email</strong> o <strong>codice individuale monouso</strong>. Da discutere fattibilit&agrave; e tempi.</p></div></div>
     <div class="task-item reveal"><div class="task-n wh">2</div><div class="task-info"><h4>Bypass dashboard &mdash; login diretto alla pagina contenuti</h4><p>Oggi dopo il login la tester atterra sulla dashboard scura con 3 card. Per il test, dopo il login deve atterrare <strong>direttamente sulla pagina contenuti</strong>, saltando la dashboard.</p></div></div>
@@ -624,6 +652,8 @@
     <div class="task-item reveal"><div class="task-n wh">5</div><div class="task-info"><h4>Percorso Viso: da lista accordion a navigazione 7 card</h4><p>Oggi il Percorso Viso &egrave; una lista piatta di accordion. Deve diventare <strong>7 card giornaliere</strong> &rarr; click &rarr; pagina del giorno con video + focus opzionale. Giorno 4 = popup pausa.</p></div></div>
     <div class="task-item reveal"><div class="task-n wh">6</div><div class="task-info"><h4>Sostituire accordion con selettore livello (Percorso Corpo)</h4><p>Nelle pagine giorno del Corpo, sezione &ldquo;Programma Corso&rdquo;: gli accordion vanno sostituiti con il <strong>selettore visuale a bottoni</strong> gi&agrave; esistente (&ldquo;Come ti senti oggi? Scegli il tuo livello&rdquo;).</p></div></div>
     <div class="task-item reveal"><div class="task-n wh">7</div><div class="task-info"><h4>Nascondere pagina &ldquo;Inizia da qui&rdquo;</h4><p>La pagina con i piani di accesso (Iscrizione Gratuita / Accesso Completo) non serve per il test. Le tester hanno gi&agrave; pagato su bSoul. Va nascosta dalla navigazione.</p></div></div>
+    <div class="task-item reveal"><div class="task-n wh">8</div><div class="task-info"><h4>Header con 3 sezioni: Test / Approfondimenti / Parola degli Esperti</h4><p>Sopra i blocchi Viso e Corpo, aggiungere un header di navigazione con 3 sezioni: <strong>Test</strong> (auto-test postura, cellulite, ecc.), <strong>Approfondimenti</strong> (Martina spiega il perch&eacute; di posture, respirazione, ecc.), <strong>Parola degli Esperti</strong> (video con professionisti: urologo, fisiatra e osteopata, nutrizionista, geriatra, nutrizione dello sport, psicoterapeuta).</p></div></div>
+    <div class="task-item reveal"><div class="task-n wh">9</div><div class="task-info"><h4>Disclaimer medico-legale</h4><p>Inserire un claim redatto dall&rsquo;avvocato: invito a consultare il proprio medico in caso di patologie particolari, esclusione di responsabilit&agrave;. Posizione da definire (prima dei contenuti o in fondo alla pagina).</p></div></div>
   </div>
 
   <div class="tasks-group-title internal reveal">Interni (Niccol&ograve; + Alberto) &mdash; 2 interventi</div>
@@ -659,7 +689,8 @@
     <div class="agenda-item reveal"><div class="agenda-n">3</div><div class="agenda-info"><h4>Ristrutturazione landing contenuti</h4><p>Blocco intro + video in cima. Due percorsi come blocchi uguali. Fattibilit&agrave; e tempi.</p></div></div>
     <div class="agenda-item reveal"><div class="agenda-n">4</div><div class="agenda-info"><h4>Percorso Viso: da accordion a 7 card</h4><p>Trasformare la lista piatta del Percorso Viso in 7 card con la stessa navigazione del Corpo. Quanto lavoro richiede?</p></div></div>
     <div class="agenda-item reveal"><div class="agenda-n">5</div><div class="agenda-info"><h4>Accordion &rarr; selettore livello (Corpo)</h4><p>Sostituire gli accordion in &ldquo;Programma Corso&rdquo; con il selettore visuale a bottoni che gi&agrave; esiste. Serve codice nuovo o &egrave; riconfigurazione?</p></div></div>
-    <div class="agenda-item reveal"><div class="agenda-n">6</div><div class="agenda-info"><h4>Timeline complessiva</h4><p>Quanto tempo serve per tutti gli interventi? Cosa si fa in parallelo? Il test &egrave; a maggio &mdash; quali sono i vincoli?</p></div></div>
+    <div class="agenda-item reveal"><div class="agenda-n">6</div><div class="agenda-info"><h4>Header 3 sezioni + disclaimer legale</h4><p>Aggiunta header con Test / Approfondimenti / Parola degli Esperti sopra i percorsi. Pi&ugrave; disclaimer medico-legale (testo dall&rsquo;avvocato). Dove lo posizioniamo?</p></div></div>
+    <div class="agenda-item reveal"><div class="agenda-n">7</div><div class="agenda-info"><h4>Timeline complessiva</h4><p>Quanto tempo serve per tutti gli interventi? Cosa si fa in parallelo? Il test &egrave; a maggio &mdash; quali sono i vincoli?</p></div></div>
   </div>
 </div>
 
